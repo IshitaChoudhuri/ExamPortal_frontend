@@ -25,7 +25,6 @@ export class SignupComponent implements OnInit {
   formSubmit() {
     console.log(this.user);
     if (this.user.username == '' || this.user.username == null) {
-      // alert('User is required !!');
       this.snack.open('Username is required !! ', '', {
         duration: 3000,
       });
@@ -33,27 +32,41 @@ export class SignupComponent implements OnInit {
     }
 
     if (this.user.password == '' || this.user.password == null) {
-      // alert('User is required !!');
       this.snack.open('Password is required !! ', '', {
         duration: 3000,
       });
       return;
     }
 
-    //validate
+    if (!this.validatePassword(this.user.password)) {
+      this.snack.open('Password must be at least 6 characters long', '', {
+        duration: 3000,
+      });
+      return;
+    }
+
+    if (!this.validateEmail(this.user.email)) {
+      this.snack.open('Please enter a valid email address', '', {
+        duration: 3000,
+      });
+      return;
+    }
+
+    if (!this.validatePhone(this.user.phone)) {
+      this.snack.open('Please enter a valid phone number', '', {
+        duration: 3000,
+      });
+      return;
+    }
 
     //addUser: userservice
     this.userService.addUser(this.user).subscribe(
       (data: any) => {
-        //success
         console.log(data);
-        //alert('success');
         Swal.fire('Successfully done !!', 'User id is ' + data.id, 'success');
       },
       (error) => {
-        //error
         console.log(error);
-        // alert('something went wrong');
         this.snack.open(error.error.text, '', {
           duration: 3000,
         });
@@ -61,5 +74,17 @@ export class SignupComponent implements OnInit {
     );
   }
 
-  //this.user
+  validatePassword(password: string): boolean {
+    return password.length >= 6;
+  }
+
+  validateEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  validatePhone(phone: string): boolean {
+    const phoneRegex = /^\d{10}$/;
+    return phoneRegex.test(phone);
+  }
 }
