@@ -1,0 +1,30 @@
+.full-width {
+  width: 100%;
+}
+.primary-button {
+  background-color: #1976d2; 
+  color: white; 
+}
+.primary-button:hover {
+  background-color: #1565c0; 
+}
+
+.accent-button {
+  background-color: #ff4081; 
+  color: white; 
+}
+
+.accent-button:hover {
+  background-color: #f50057; 
+}
+.button-container {
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+}
+
+.button-container button {
+  margin-right: 10px;
+}
+
+

@@ -1,0 +1,30 @@
+.mat-toolbar {
+  background-color: transparent; 
+  transition: background-color 0.3s; 
+}
+
+.mat-toolbar:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.example-icon {
+  color: burlywood;
+}
+
+.example-icon:hover {
+  color: beige; 
+}
+
+.favorite-icon {
+  color: burlywood !important; 
+}
+.quiz-quest {
+  color: burlywood; 
+}
+
+.quiz-quest:hover {
+  color: burlywood;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
