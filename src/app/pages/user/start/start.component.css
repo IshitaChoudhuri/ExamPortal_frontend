@@ -1,5 +1,38 @@
-/* Style for timer */
-.timer {
-    color: blueviolet; /* Change to your desired color */
+  .bootstrap-wrapper {
+    margin-top: 20px;
+  }
+  
+  .question-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .quiz-title {
+    font-weight: bold;
+  }
+  
+  .question-content {
+    margin-left: 10px;
+  }
+  
+  .progress-card {
+    margin-top: 70px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .timer {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: blueviolet; 
+  }
+  
+  .result-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
   }
   
